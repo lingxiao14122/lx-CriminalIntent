@@ -7,33 +7,16 @@ import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 import android.util.Log;
 
-public class CrimeActivity extends AppCompatActivity {
+public class CrimeActivity extends SingleFragmentActivity {
 
     private static final String TAG = "xiao.CRIME ACTIVITY =😁";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        Log.i(TAG, "onCreate: 1");
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_crime);
-
-        // get reference of FragmentManager in this activity
-        FragmentManager fm = getSupportFragmentManager();
-
-        // get reference of CrimeFragment
-        Fragment fragment = fm.findFragmentById(R.id.fragment_container);
-
-        if (fragment == null) {
-            fragment = new CrimeFragment();
-            // Create a new fragment transaction,
-            // include one add operation in it, and then commit it
-            fm.beginTransaction()
-                    .add(R.id.fragment_container, fragment)
-                    .commit();
-        }
-
-
+    protected Fragment createFragment() {
+        return new CrimeFragment();
     }
+
+// below are lifecycle logs
 
     @Override
     protected void onStart() {

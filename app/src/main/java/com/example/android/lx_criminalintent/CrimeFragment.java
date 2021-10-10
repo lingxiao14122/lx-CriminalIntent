@@ -1,6 +1,7 @@
 package com.example.android.lx_criminalintent;
 
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -75,6 +76,8 @@ public class CrimeFragment extends Fragment {
 
         return v;
     }
+
+    // below are lifecycle logs
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
